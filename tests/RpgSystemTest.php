@@ -7,7 +7,7 @@ DEFINE('DS', DIRECTORY_SEPARATOR);
 require_once(__DIR__ . DS . '..' . DS . 'vendor' . DS . 'autoload.php');
 
 use PHPUnit\Framework\TestCase;
-//use danielsonsilva\RpgSystem\_3det;
+use danielsonsilva\RpgSystem\_3det;
 
 final class RpgSystemTest extends TestCase
 {

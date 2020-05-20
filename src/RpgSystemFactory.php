@@ -5,10 +5,7 @@ namespace danielsonsilva\RpgSystem;
 interface RpgSystemFactory
 {
     // creates the Playable Character
-    public function createPC();
-    
-    // creates the Non Playable Character
-    public function createNPC();
+    public function createPC(): PcCharacterFactory;
     
     // creates the Monsters
     public function createMonster();

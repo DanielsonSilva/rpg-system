@@ -2,20 +2,25 @@
 
 namespace danielsonsilva\RpgSystem\_3det;
 
-use danielsonsilva\RpgSystem;
+use danielsonsilva\RpgSystem\RpgSystemFactory;
 
-class System3det extends RpgSystemFactory
+class System3det implements RpgSystemFactory
 {
     // creates the Playable Character
-    public function createPC()
+    public function createPC(): PcCharacter3det
     {
-        
-    }
-    
-    // creates the Non Playable Character
-    public function createNPC()
-    {
-        
+        $character = new PcCharacter3det();
+        $attr = [
+            'strength' => 0,
+            'ability' => 0,
+            'endurance' => 0,
+            'armor' => 0,
+            'firepower' => 0,
+            'hp' => 0,
+            'mp' => 0,
+        ];
+        $character->setAttributes($attr);
+        return $character;
     }
     
     // creates the Monsters
