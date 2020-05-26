@@ -2,9 +2,9 @@
 
 namespace danielsonsilva\RpgSystem\Drogphia;
 
-use danielsonsilva\RpgSystem;
+use danielsonsilva\RpgSystem\RpgSystemFactory;
 
-class SystemDrogphia extends RpgSystemFactory
+class SystemDrogphia implements RpgSystemFactory
 {
     // creates the Playable Character
     public function createPC()

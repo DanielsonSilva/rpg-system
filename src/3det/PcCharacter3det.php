@@ -99,6 +99,11 @@ class PcCharacter3det implements PcCharacterFactory
         return $roller->roll();
     }
     
+    /**
+     * Get the dice roller from certain attribute
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::getRollAttribute()
+     */
     public function getRollAttribute($attributeName): DiceRoller
     {
         $dice = new DiceRoller();
@@ -106,16 +111,31 @@ class PcCharacter3det implements PcCharacterFactory
         return $dice;
     }
     
+    /**
+     * Check if the character is dead
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::isDead()
+     */
     public function isDead()
     {
         
     }
     
+    /**
+     * Check if the character was hit
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::isHit()
+     */
     public function isHit()
     {
         
     }
     
+    /**
+     * Update character after got hit
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::gotHit()
+     */
     public function gotHit($hitPoints)
     {
         

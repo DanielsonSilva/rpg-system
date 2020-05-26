@@ -4,7 +4,7 @@ namespace danielsonsilva\RpgSystem\Drogphia;
 use danielsonsilva\RpgSystem\PcCharacterFactory;
 use danielsonsilva\DiceRoller\DiceRoller;
 
-class PcCharacter3det implements PcCharacterFactory
+class PcCharacterDrogphia implements PcCharacterFactory
 {
     private $attributes;
     
@@ -25,7 +25,17 @@ class PcCharacter3det implements PcCharacterFactory
         
     }
     
+    public function getAttackRoll($options)
+    {
+        
+    }
+    
     public function useMagic($options)
+    {
+        
+    }
+    
+    public function getMagicRoll($options)
     {
         
     }
