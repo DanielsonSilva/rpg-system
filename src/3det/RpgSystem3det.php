@@ -45,7 +45,8 @@ class System3det implements RpgSystemFactory
     // creates Items
     public function createItem()
     {
-        
+        $item3det = new Item3det();
+        return $item3det;
     }
     
     // creates Equipments
