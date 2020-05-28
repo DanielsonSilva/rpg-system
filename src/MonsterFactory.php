@@ -18,7 +18,7 @@ interface MonsterFactory
     
     public function isDead();
     
-    public function isHit();
+    public function isHit($option);
     
     public function gotHit($hitPoints);
 }

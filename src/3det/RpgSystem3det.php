@@ -26,7 +26,20 @@ class System3det implements RpgSystemFactory
     // creates the Monsters
     public function createMonster()
     {
-        
+        $monster = new Monster3det();
+        $attr = [
+            'strength' => 0,
+            'ability' => 0,
+            'endurance' => 0,
+            'armor' => 0,
+            'firepower' => 0,
+            'hp' => 0,
+            'mp' => 0,
+        ];
+        $monster->setAttributes($attr);
+        $monster->setAttackPrefered(0);
+        $monster->setXpValue(0);
+        return $monster;
     }
     
     // creates Items
