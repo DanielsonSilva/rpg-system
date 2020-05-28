@@ -2,6 +2,8 @@
 
 namespace danielsonsilva\RpgSystem;
 
+use danielsonsilva\DiceRoller\DiceRoller;
+
 interface PcCharacterFactory
 {
     private $attributes;
@@ -24,7 +26,11 @@ interface PcCharacterFactory
     
     public function isDead();
     
-    public function isHit();
+    public function isHit($option);
+    
+    public function rollToGetHit(): bool;
+    
+    public function getRollGetHit(): DiceRoller;
     
     public function gotHit($hitPoints);
 }

@@ -118,7 +118,7 @@ class PcCharacter3det implements PcCharacterFactory
      */
     public function isDead()
     {
-        
+        return ($this->attributes['hp'] <= 0);
     }
     
     /**
@@ -126,9 +126,36 @@ class PcCharacter3det implements PcCharacterFactory
      * {@inheritDoc}
      * @see \danielsonsilva\RpgSystem\PcCharacterFactory::isHit()
      */
-    public function isHit()
+    public function isHit($option)
     {
-        
+        if (isset($option['result']) && $option['result'] < $option['hit']) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Defines if this character needs a roll to check if is hit
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::rollToGetHit()
+     */
+    public function rollToGetHit(): bool
+    {
+        return true;
+    }
+    
+    /**
+     * Define which dice to roll to check if it is hit
+     * {@inheritDoc}
+     * @see \danielsonsilva\RpgSystem\PcCharacterFactory::getRollGetHit()
+     */
+    public function getRollGetHit(): DiceRoller
+    {
+        $dice = new DiceRoller();
+        $dice->addDice(1, 6);
+        $dice->addValue($this->attributes['ability']);
+        $dice->addValue($this->attributes['armor']);
+        return $dice;
     }
     
     /**
@@ -138,7 +165,10 @@ class PcCharacter3det implements PcCharacterFactory
      */
     public function gotHit($hitPoints)
     {
-        
+        $this->attributes['hp'] -= $hitPoints;
+        if ($this->attributes['hp'] < 0) {
+            $this->attributes['hp'] = 0;
+        }
     }
     
     /**

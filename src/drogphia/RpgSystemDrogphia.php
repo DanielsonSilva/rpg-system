@@ -9,13 +9,10 @@ class SystemDrogphia implements RpgSystemFactory
     // creates the Playable Character
     public function createPC()
     {
-        
-    }
-    
-    // creates the Non Playable Character
-    public function createNPC()
-    {
-        
+        $character = new PcCharacterDrogphia();
+        $attr = [];
+        $character->setAttributes($attr);
+        return $character;
     }
     
     // creates the Monsters
