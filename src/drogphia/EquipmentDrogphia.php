@@ -4,7 +4,7 @@ namespace danielsonsilva\RpgSystem\Drogphia;
 
 use danielsonsilva\RpgSystem\EquipmentFactory;
 
-class Equipment3det implements EquipmentFactory
+class EquipmentDrogphia implements EquipmentFactory
 {
     private $attributes;
     
